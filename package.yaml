@@ -1,0 +1,62 @@
+name:                httpdb
+version:             0.1.0.0
+github:              "githubuser/httpdb"
+license:             BSD3
+author:              "Aleksandr Zhukov"
+maintainer:          "aleksandr.zhukov@telekom.de"
+copyright:           "2021 Aleksandr Zhukov"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+# description:         Please see the README on GitHub at <https://github.com/githubuser/httpdb#readme>
+
+dependencies:
+- base              >= 4.7 && < 5
+- split             >= 0.2.3.3 && < 1.0.0.0
+
+# library:
+#   source-dirs: src
+
+executables:
+  httpdb:
+    source-dirs:         app
+    main:                Main.hs
+    ghc-options:         [-main-is Main, -threaded, -rtsopts, -with-rtsopts=-N]
+    dependencies:
+    - bytestring        >= 0.10.12
+    - http-types        >= 0.12.3
+    - wai               >= 3.2.3
+    - warp              >= 3.3.14
+    # - case-insensitive  >= 1.2.1.0
+    # - httpdb
+  dbc-mysql:
+    source-dirs:        app/dbc-mysql
+    main:               MySQL.hs
+    ghc-options:        [-main-is MySQL -threaded, -rtsopts, -with-rtsopts=-N]
+    dependencies:
+    - mysql-haskell     >= 0.8.4.3
+    - io-streams        >= 1.5.2.0
+  # dbc-hdbc-odbc:
+    # source-dirs:        app/dbc-hdbc-odbc
+    # main:               Main.hs
+    # ghc-options:        [-threaded, -rtsopts, -with-rtsopts=-N]
+    # dependencies:
+    # - HDBC              >= 2.4.0.3
+    # - HDBC-odbc         >= 2.6.0.0
+
+# tests:
+#   httpdb-test:
+#     main:                Spec.hs
+#     source-dirs:         test
+#     ghc-options:         [-threaded, -rtsopts, -with-rtsopts=-N]
+    # dependencies:
+    # - httpdb

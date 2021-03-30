@@ -1,0 +1,55 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0dae3009bca3250413177929ea68a43a5362397d03200e7570c6d90f88dba26a
+
+name:           httpdb
+version:        0.1.0.0
+homepage:       https://github.com/githubuser/httpdb#readme
+bug-reports:    https://github.com/githubuser/httpdb/issues
+author:         Aleksandr Zhukov
+maintainer:     aleksandr.zhukov@telekom.de
+copyright:      2021 Aleksandr Zhukov
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/httpdb
+
+executable dbc-mysql
+  main-is: MySQL.hs
+  other-modules:
+      Paths_httpdb
+  hs-source-dirs:
+      app/dbc-mysql
+  ghc-options: -main-is MySQL -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , io-streams >=1.5.2.0
+    , mysql-haskell >=0.8.4.3
+    , split >=0.2.3.3 && <1.0.0.0
+  default-language: Haskell2010
+
+executable httpdb
+  main-is: Main.hs
+  other-modules:
+      Paths_httpdb
+  hs-source-dirs:
+      app
+  ghc-options: -main-is Main -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring >=0.10.12
+    , http-types >=0.12.3
+    , split >=0.2.3.3 && <1.0.0.0
+    , wai >=3.2.3
+    , warp >=3.3.14
+  default-language: Haskell2010
