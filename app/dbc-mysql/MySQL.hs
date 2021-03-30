@@ -23,10 +23,11 @@ main = do
   where
     everyRow = intercalate "," . map (showSQLValue)
       where
-        showSQLValue (MySQLInt32 i)   = "\"" ++ show i ++ "\""
+        showSQLValue (MySQLInt32 i)   = show i
         showSQLValue (MySQLText  t)   = show t
-        showSQLValue (MySQLDate  d)   = "\"" ++ show d ++ "\""
-        showSQLValue (MySQLDecimal d) = "\"" ++ show d ++ "\""
+        showSQLValue (MySQLDate  d)   = show d
+        showSQLValue (MySQLDecimal d) = show d
+        showSQLValue (MySQLNull)      = "NULL"
         showSQLValue (x)              = show x
 
 -- lls <- Streams.toList is
