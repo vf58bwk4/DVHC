@@ -1,4 +1,4 @@
-module Main where
+module Odbc where
 
 import Database.HDBC
 import Database.HDBC.Types

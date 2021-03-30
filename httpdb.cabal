@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0dae3009bca3250413177929ea68a43a5362397d03200e7570c6d90f88dba26a
+-- hash: 49f05ff8de6b7ab38a7e529ef5184062da1da3c361c371a950cf2f2b36581599
 
 name:           httpdb
 version:        0.1.0.0
@@ -23,6 +23,20 @@ extra-source-files:
 source-repository head
   type: git
   location: https://github.com/githubuser/httpdb
+
+executable dbc-hdbc-odbc
+  main-is: Odbc.hs
+  other-modules:
+      Paths_httpdb
+  hs-source-dirs:
+      app/dbc-hdbc-odbc
+  ghc-options: -main-is Odbc -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HDBC >=2.4.0.3
+    , HDBC-odbc >=2.6.0.0
+    , base >=4.7 && <5
+    , split >=0.2.3.3 && <1.0.0.0
+  default-language: Haskell2010
 
 executable dbc-mysql
   main-is: MySQL.hs
