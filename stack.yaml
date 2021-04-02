@@ -45,6 +45,9 @@ extra-deps:
   - HDBC-2.4.0.3
   - HDBC-odbc-2.6.0.0
   - split-0.2.3.4
+  - text-1.2.4.1
+  - bytestring-0.10.12.0
+  - resource-pool-0.2.3.2
 
 # - acme-missiles-0.3
 # - git: https://github.com/commercialhaskell/stack.git

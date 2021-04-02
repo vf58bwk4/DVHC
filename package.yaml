@@ -30,28 +30,34 @@ executables:
   httpdb:
     source-dirs:         app
     main:                Main.hs
-    ghc-options:         [-main-is Main, -threaded, -rtsopts, -with-rtsopts=-N]
+    ghc-options:         [-main-is Main, -threaded, -rtsopts, -with-rtsopts=-N, -Wall, -Werror]
     dependencies:
     - bytestring        >= 0.10.12
     - http-types        >= 0.12.3
     - wai               >= 3.2.3
     - warp              >= 3.3.14
-    # - case-insensitive  >= 1.2.1.0
-    # - httpdb
+    - mysql-haskell     >= 0.8.4.3
+    - io-streams        >= 1.5.2.0
+    - text              >= 1.2.4.1
+    - resource-pool     >= 0.2.3.2
   dbc-mysql:
     source-dirs:        app/dbc-mysql
     main:               MySQL.hs
-    ghc-options:        [-main-is MySQL, -threaded, -rtsopts, -with-rtsopts=-N]
+    ghc-options:        [-main-is MySQL, -threaded, -rtsopts, -with-rtsopts=-N, -Wall, -Werror]
     dependencies:
     - mysql-haskell     >= 0.8.4.3
     - io-streams        >= 1.5.2.0
+    - text              >= 1.2.4.1
+    - resource-pool     >= 0.2.3.2
   dbc-hdbc-odbc:
     source-dirs:        app/dbc-hdbc-odbc
     main:               Odbc.hs
-    ghc-options:        [-main-is Odbc, -threaded, -rtsopts, -with-rtsopts=-N]
+    ghc-options:        [-main-is Odbc, -threaded, -rtsopts, -with-rtsopts=-N, -Wall, -Werror]
     dependencies:
     - HDBC              >= 2.4.0.3
     - HDBC-odbc         >= 2.6.0.0
+    - text              >= 1.2.4.1
+    - bytestring        >= 0.10.12.0
 
 # tests:
 #   httpdb-test:

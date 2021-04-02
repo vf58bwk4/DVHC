@@ -67,6 +67,27 @@ packages:
       sha256: 72c550dd427dc15a2195e16c84bdb4712060fe601d87e95674154b44403550d9
   original:
     hackage: split-0.2.3.4
+- completed:
+    hackage: text-1.2.4.1@sha256:e12b468008b3c2bbc1f39bd2dcb75ba8f563c65aa5e54ee223b76463a845b6f1,7184
+    pantry-tree:
+      size: 7720
+      sha256: b1fd81329340a9c6eea4e78313d36c6a333a5de6032ec1536ff6c70a4300b46c
+  original:
+    hackage: text-1.2.4.1
+- completed:
+    hackage: bytestring-0.10.12.0@sha256:3756939e46a9adb9cd5654442e7a44f53d0ad94fca8a9ad7029cc28fa6b0a081,6070
+    pantry-tree:
+      size: 2140
+      sha256: 4e979f335e85ccb677f171f1e8e4d1139c8bc4e3ace7fb1fdf9bdffe9b0d9287
+  original:
+    hackage: bytestring-0.10.12.0
+- completed:
+    hackage: resource-pool-0.2.3.2@sha256:0955486bc1db37e4eb27acb964185f9e9cb8ad5ce054c85e1e6fd7562b2d7542,1375
+    pantry-tree:
+      size: 267
+      sha256: 07d0db63c72372262b29bb9c8ba63ab6dc1c1779c519c6e65e5fdc7a245ef4eb
+  original:
+    hackage: resource-pool-0.2.3.2
 snapshots:
 - completed:
     size: 565712

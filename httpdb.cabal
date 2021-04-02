@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 49f05ff8de6b7ab38a7e529ef5184062da1da3c361c371a950cf2f2b36581599
+-- hash: ff72b264f9a0bb1afd0e24aab837d6c1a094fa66d5df4d71c4908dbadb83f95c
 
 name:           httpdb
 version:        0.1.0.0
@@ -30,12 +30,14 @@ executable dbc-hdbc-odbc
       Paths_httpdb
   hs-source-dirs:
       app/dbc-hdbc-odbc
-  ghc-options: -main-is Odbc -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -main-is Odbc -threaded -rtsopts -with-rtsopts=-N -Wall -Werror
   build-depends:
       HDBC >=2.4.0.3
     , HDBC-odbc >=2.6.0.0
     , base >=4.7 && <5
+    , bytestring >=0.10.12.0
     , split >=0.2.3.3 && <1.0.0.0
+    , text >=1.2.4.1
   default-language: Haskell2010
 
 executable dbc-mysql
@@ -44,12 +46,14 @@ executable dbc-mysql
       Paths_httpdb
   hs-source-dirs:
       app/dbc-mysql
-  ghc-options: -main-is MySQL -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -main-is MySQL -threaded -rtsopts -with-rtsopts=-N -Wall -Werror
   build-depends:
       base >=4.7 && <5
     , io-streams >=1.5.2.0
     , mysql-haskell >=0.8.4.3
+    , resource-pool >=0.2.3.2
     , split >=0.2.3.3 && <1.0.0.0
+    , text >=1.2.4.1
   default-language: Haskell2010
 
 executable httpdb
@@ -58,12 +62,16 @@ executable httpdb
       Paths_httpdb
   hs-source-dirs:
       app
-  ghc-options: -main-is Main -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -main-is Main -threaded -rtsopts -with-rtsopts=-N -Wall -Werror
   build-depends:
       base >=4.7 && <5
     , bytestring >=0.10.12
     , http-types >=0.12.3
+    , io-streams >=1.5.2.0
+    , mysql-haskell >=0.8.4.3
+    , resource-pool >=0.2.3.2
     , split >=0.2.3.3 && <1.0.0.0
+    , text >=1.2.4.1
     , wai >=3.2.3
     , warp >=3.3.14
   default-language: Haskell2010
